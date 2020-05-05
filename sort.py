@@ -3,6 +3,7 @@ import numpy as np
 import argparse
 import matplotlib.pyplot as plt
 import time
+import glob
 
 
 def parse_args():
@@ -32,6 +33,10 @@ if __name__ == '__main__':
         print(os.path.exists('mot_benchmark'))
     if not os.path.exists('output'):
         os.makedirs('output')
+    pattern = os.path.join(args.seq_path, phase, '*', 'det', 'det.txt')
+    # print(pattern)
+    for seq_dets_fn in glob.glob(pattern):
+        print(seq_dets_fn)
     # print(display)
     # print(phase)
     # print(args)
