@@ -35,6 +35,7 @@ if __name__ == '__main__':
         os.makedirs('output')
     pattern = os.path.join(args.seq_path, phase, '*', 'det', 'det.txt')
     # print(pattern)
+    # print(glob.glob(pattern))
     for seq_dets_fn in glob.glob(pattern):
         print(seq_dets_fn)
     # print(display)
